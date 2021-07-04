@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microservicio_Paquete.Domain.Commands;
+using Microservicio_Paquetes.Domain.Commands;
 
-namespace Microservicio_Paquete.AccessData.Commands
+namespace Microservicio_Paquetes.AccessData.Commands
 {
     public class GenericsRepository : IRepositoryGeneric
     {
-        private readonly TemplateDbContext _context;
-        public GenericsRepository(TemplateDbContext dbContext)
+        private readonly PaquetesDbContext _context;
+        public GenericsRepository(PaquetesDbContext dbContext)
         {
             _context = dbContext;
         }

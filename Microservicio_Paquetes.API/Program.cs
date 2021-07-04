@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Microservicio_Paquete.API
+namespace Microservicio_Paquetes.API
 {
     public class Program
     {

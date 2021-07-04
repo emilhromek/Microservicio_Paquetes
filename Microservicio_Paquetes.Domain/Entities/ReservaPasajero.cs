@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class ReservaPasajero
     {
-        public int id { get; set; }
-        public int idReserva { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required]
+        public int ReservaId { get; set; }
         public Reserva Reserva { get; set; }
-        public int idPasajero { get; set; }
+        [Required]
+        public int PasajeroId { get; set; }
         
     }
 }

@@ -1,38 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj": {}
+    "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
+    "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj",
+        "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj",
         "projectName": "Microservicio_Paquetes.AccessData",
-        "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj",
+        "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\obj\\",
+        "outputPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
               },
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
               }
             }
           }
@@ -44,8 +44,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -91,38 +91,38 @@
         }
       }
     },
-    "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj": {
+    "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
+        "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
         "projectName": "Microservicio_Paquetes.API",
-        "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
+        "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.API\\obj\\",
+        "outputPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj"
               },
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
               },
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
               }
             }
           }
@@ -134,8 +134,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -184,32 +184,32 @@
         }
       }
     },
-    "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
+    "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj",
         "projectName": "Microservicio_Paquetes.Application",
-        "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj",
+        "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Application\\obj\\",
+        "outputPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
-                "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
+              "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
+                "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
               }
             }
           }
@@ -221,8 +221,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -268,29 +268,29 @@
         }
       }
     },
-    "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
+    "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
         "projectName": "Microservicio_Paquetes.Domain",
-        "projectPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
+        "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -301,8 +301,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

@@ -4,113 +4,69 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microservicio_Paquete.Domain.Entities;
-using Microservicio_Paquete.Domain.Commands;
-using Microservicio_Paquete.Domain.DTO;
-using Microservicio_Paquete.Application.Services;
+using Microservicio_Paquetes.Domain.Entities;
+using Microservicio_Paquetes.Domain.Commands;
+using Microservicio_Paquetes.Domain.DTO;
+using Microservicio_Paquetes.Application.Services;
+using Microservicio_Paquetes.Domain.Responses;
 
-namespace Microservicio_Paquete.API.Controllers
+namespace Microservicio_Paquetes.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class DestinoController : ControllerBase
     {
-        private readonly IDestinoCommandService _commandservice;
-        private readonly IDestinoQueryService _queryservice;
+        private readonly IDestinoService _destinoservice;
 
-        public DestinoController(IDestinoCommandService commandservice, IDestinoQueryService queryservice)
+        public DestinoController(IDestinoService destinoservice)
         {
-            _commandservice = commandservice;
-            _queryservice = queryservice;
+            _destinoservice = destinoservice;
         }
-
-
-
-        //[HttpPost]
-        //public Destino Post(DestinoDto destino)
-        //{
-            //Destino nuevodestino = new Destino();
-
-            //nuevodestino.lugar = destino.lugar;
-            //nuevodestino.descripcion = destino.descripcion;
-            //nuevodestino.atractivo = destino.atractivo;
-            //nuevodestino.historia = destino.historia;
-
-            //return _commandservice.createDestino(nuevodestino);
-
-        //}
 
        [HttpPost]
-       public async Task<ActionResult<Destino>> PostDestino(DestinoDto destino)
+       public async Task<ActionResult> PostDestino(DestinoDto destino)
        {
-            Destino nuevodestino = new Destino();
+            Response respuesta = _destinoservice.PostDestino(destino);
 
-            nuevodestino.lugar = destino.lugar;
-            nuevodestino.descripcion = destino.descripcion;
-            nuevodestino.atractivo = destino.atractivo;
-            nuevodestino.historia = destino.historia;
+            if (respuesta.Code.Equals("BAD_REQUEST"))
+            {
+                return BadRequest(respuesta);
+            }
 
-            _commandservice.createDestino(nuevodestino);
-
-            return CreatedAtAction("PostDestino", new { id = nuevodestino.id, lugar = destino.lugar, descripcion = destino.descripcion });
-       }
-
-        //[HttpGet]
-        //public IEnumerable<Destino> Get()
-        //{
-        //return _queryservice.getDestinos();
-        //}
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Destino>>> GetDestino()
-        {
-            var listado = _queryservice.getDestinos();
-
-            if (listado.Count() == 0)
-                return NotFound();
-
-            return listado.ToList();
+            return Created("PostDestino", respuesta);
         }
-
-        //[HttpGet("{id}")]
-        //public Destino GetId(int id)
-        //{
-        //return _queryservice.getDestinoId(id);
-        //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Destino>> GetDestino(int id)
+        public async Task<ActionResult> GetDestino(int id)
         {
-            var destino = _queryservice.getDestinoId(id);
+            object respuesta = _destinoservice.GetDestinoId(id);
 
-            if (destino == null)
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            return destino;
+            return Ok(respuesta);
         }
 
-        //[HttpDelete("{id}")]
-        //public void DeleteId(int id)
-        //{
-        //_commandservice.deleteDestinoId(id);
-        //}
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Destino>> DeleteDestino(int id)
+        [HttpGet]
+        public async Task<ActionResult> GetDestinos()
         {
-            var destino = _queryservice.getDestinoId(id);
-            if (destino == null)
+            object respuesta = _destinoservice.GetDestinos();
+
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            _commandservice.deleteDestinoId(id);
-
-            return destino;
+            return Ok(respuesta);
         }
-
 
     }
 }

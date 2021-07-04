@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class Comentario
     {
-        public int id { get; set; }
-        public string fecha { get; set; }
-        public string mensaje { get; set; }
-        public int idDestino { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required, DataType(DataType.DateTime), Column(TypeName = "DateTime")]
+        public DateTime Fecha { get; set; }
+        [Required, MaxLength(255)] // Ver esto
+        public string Mensaje { get; set; }
+        [Required]
+        public int DestinoId { get; set; }
         public Destino Destino { get; set; }
-        public int idPasajero { get; set; }
+        [Required]
+        public int PasajeroId { get; set; }
     }
 }

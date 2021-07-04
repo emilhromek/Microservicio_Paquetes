@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class TipoHabitacion
     {
-        public int id { get; set; }
-        public string tipo { get; set; }
-        public string descripcion { get; set; }
-        public int plazas { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required, MaxLength(50)]
+        public string Tipo { get; set; }
+        [Required, MaxLength(255)]
+        public string Descripcion { get; set; }
+        [Required]
+        public int Plazas { get; set; }
+        public ICollection<HabitacionHotel> HabitacionesHotel { get; set; }
     }
 }

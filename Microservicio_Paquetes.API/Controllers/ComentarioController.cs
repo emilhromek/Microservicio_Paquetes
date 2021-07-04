@@ -4,114 +4,74 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microservicio_Paquete.Domain.Entities;
-using Microservicio_Paquete.Domain.Commands;
-using Microservicio_Paquete.Domain.DTO;
-using Microservicio_Paquete.Application.Services;
+using Microservicio_Paquetes.Domain.Entities;
+using Microservicio_Paquetes.Domain.Commands;
+using Microservicio_Paquetes.Domain.DTO;
+using Microservicio_Paquetes.Application.Services;
+using Microservicio_Paquetes.Domain.Responses;
 
-namespace Microservicio_Paquete.API.Controllers
+namespace Microservicio_Paquetes.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ComentarioController : ControllerBase
     {
-        private readonly IComentarioCommandService _commandservice;
-        private readonly IComentarioQueryService _queryservice;
+        private readonly IComentarioService _comentarioservice;
 
-        public ComentarioController(IComentarioCommandService commandservice, IComentarioQueryService queryservice)
+        public ComentarioController(IComentarioService comentarioservice)
         {
-            _commandservice = commandservice;
-            _queryservice = queryservice;
+            _comentarioservice = comentarioservice;
         }
 
-
-
-        //[HttpPost]
-        //public Destino Post(DestinoDto destino)
-        //{
-            //Destino nuevodestino = new Destino();
-
-            //nuevodestino.lugar = destino.lugar;
-            //nuevodestino.descripcion = destino.descripcion;
-            //nuevodestino.atractivo = destino.atractivo;
-            //nuevodestino.historia = destino.historia;
-
-            //return _commandservice.createDestino(nuevodestino);
-
-        //}
-
-       [HttpPost]
-       public async Task<ActionResult<Comentario>> PostComentario(ComentarioDto comentario)
-       {
-            Comentario nuevoComentario = new Comentario();
-
-            nuevoComentario.fecha = comentario.fecha;
-            nuevoComentario.mensaje = comentario.mensaje;
-            nuevoComentario.idDestino = comentario.idDestino;
-            nuevoComentario.idPasajero = comentario.idPasajero;
-
-            _commandservice.createComentario(nuevoComentario);
-
-            return CreatedAtAction("PostComentario", new { id = nuevoComentario.id, mensaje = nuevoComentario.mensaje,
-                iddestino = nuevoComentario.idDestino, idpasajero = nuevoComentario.idPasajero });
-       }
-
-        //[HttpGet]
-        //public IEnumerable<Destino> Get()
-        //{
-        //return _queryservice.getDestinos();
-        //}
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Destino>>> GetDestino()
+        [HttpPost]
+        public async Task<ActionResult> PostComentario(ComentarioDto comentario)
         {
-            var listado = _queryservice.getComentarios();
+            Response respuesta = _comentarioservice.PostComentario(comentario);
 
-            if (listado.Count() == 0)
-                return NotFound();
+            if (respuesta.Code.Equals("BAD_REQUEST"))
+            {
+                return BadRequest(respuesta);
+            }
 
-            return Ok(listado);
+            return Ok(respuesta);
         }
-
-        //[HttpGet("{id}")]
-        //public Destino GetId(int id)
-        //{
-        //return _queryservice.getDestinoId(id);
-        //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Destino>> GetComentario(int id)
+        public async Task<ActionResult<Comentario>> GetComentario(int id)
         {
-            var comentario = _queryservice.getComentarioId(id);
+            object respuesta = _comentarioservice.GetComentarioId(id);
 
-            if (comentario == null)
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            return Ok(comentario);
+            return Ok(respuesta);
         }
 
-        //[HttpDelete("{id}")]
-        //public void DeleteId(int id)
-        //{
-        //_commandservice.deleteDestinoId(id);
-        //}
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Comentario>> DeleteComentario(int id)
+        [HttpGet]
+        public async Task<ActionResult> GetComentarios([FromQuery] string idPasajero = "", [FromQuery] string idDestino = "")
         {
-            var comentario = _queryservice.getComentarioId(id);
-            if (comentario == null)
+            object respuesta = _comentarioservice.GetComentarios(idDestino, idPasajero);
+
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "BAD_REQUEST")
+                {
+                    return BadRequest(respuesta);
+                }
+
+                if (((Response) respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            _commandservice.deleteComentarioId(id);
+            return Ok(respuesta);
 
-            return comentario;
         }
-
-
     }
 }

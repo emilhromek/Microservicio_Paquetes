@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class PaqueteHotel
     {
-        public int id { get; set; }
-        public int noches { get; set; }
-        public int idPaquete { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required]
+        public int Noches { get; set; }
+        [Required]
+        public int PaqueteId { get; set; }
         public Paquete Paquete { get; set; }
-        public int idHotel { get; set; }
+        [Required]
+        public int HotelId { get; set; }
         public Hotel Hotel { get; set; }
-        public int idHotelPension { get; set; }
+        [Required]
+        public int HotelPensionId { get; set; }
         public HotelPension HotelPension { get; set; }
 
     }

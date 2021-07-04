@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class HabitacionHotelDto
     {
-        public int disponibles { get; set; }
-        public int idTipoHabitacion { get; set; }
-        public int idHotel { get; set; }
+        public int Disponibles { get; set; }
+        public int TipoHabitacionId { get; set; }
+        public int HotelId { get; set; }
     }
 }

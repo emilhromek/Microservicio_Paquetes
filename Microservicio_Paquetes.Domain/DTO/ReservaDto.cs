@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class ReservaDto
     {
-        public int id { get; set; }
-        public int preciototal { get; set; }
-        public int pasajeros { get; set; }
-        public bool pagado { get; set; }
-        public int idPasajero { get; set; }
-        public int idFormaPago { get; set; }
-        public int idPaquete { get; set; }
+        public int Pasajeros { get; set; }
+        public bool Pagado { get; set; }
+        public int PasajeroId { get; set; }
+        public int FormaPagoId { get; set; }
+        public int PaqueteId { get; set; }
+        public List<int> ListaExcursiones { get; set; }
     }
 }

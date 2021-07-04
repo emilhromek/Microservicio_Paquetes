@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class Excursion
     {
-        public int id { get; set; }
-        public string titulo { get; set; }
-        public string descripcion { get; set; }
-        public int precio { get; set; }
-        public bool bloqueada { get; set; }
-        public ICollection<DestinoExcursion> DestinoExcursiones { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required, MaxLength(50)]
+        public string Titulo { get; set; }
+        [Required, MaxLength(255)]
+        public string Descripcion { get; set; }
+        [Required]
+        public int Precio { get; set; }
+        [Required]
+        public bool Bloqueada { get; set; }
+        [Required]
+        public int DestinoId { get; set; }
+        public Destino Destino { get; set; }
         public ICollection<ReservaExcursion> ReservaExcursiones { get; set; }
 
     }

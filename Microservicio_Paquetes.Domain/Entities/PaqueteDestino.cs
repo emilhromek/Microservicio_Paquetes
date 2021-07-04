@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.Entities
+namespace Microservicio_Paquetes.Domain.Entities
 {
     public class PaqueteDestino
     {
-        public int id { get; set; }
-        public int idPaquete { get; set; }
+        [Required]
+        public int Id { get; set; }
+        [Required]
+        public int PaqueteId { get; set; }
         public Paquete Paquete { get; set; }
-        public int idDestino { get; set; }
+        [Required]
+        public int DestinoId { get; set; }
         public Destino Destino { get; set; }
 
     }

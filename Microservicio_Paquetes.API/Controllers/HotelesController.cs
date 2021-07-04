@@ -4,98 +4,73 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microservicio_Paquete.Domain.Entities;
-using Microservicio_Paquete.Domain.Commands;
-using Microservicio_Paquete.Domain.DTO;
-using Microservicio_Paquete.Application.Services;
+using Microservicio_Paquetes.Domain.Entities;
+using Microservicio_Paquetes.Domain.Commands;
+using Microservicio_Paquetes.Domain.DTO;
+using Microservicio_Paquetes.Application.Services;
+using Microservicio_Paquetes.Domain.Responses;
 
-namespace Microservicio_Paquete.API.Controllers
+namespace Microservicio_Paquetes.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class HotelesController : ControllerBase
     {
-        private readonly IHotelCommandService _commandservice;
-        private readonly IHotelQueryService _queryservice;
+        private readonly IHotelService _hotelservice;
 
-        public HotelesController(IHotelCommandService commandservice, IHotelQueryService queryservice)
+        public HotelesController(IHotelService hotelservice)
         {
-            _commandservice = commandservice;
-            _queryservice = queryservice;
+            _hotelservice = hotelservice;
         }
-
-
 
         [HttpPost]
-        public async Task<ActionResult<Hotel>> PostHotel(HotelDto hotel)
+        public async Task<ActionResult> PostHotel(HotelDto hotel)
         {
-            Hotel nuevohotel = new Hotel();
+            Response respuesta = _hotelservice.PostHotel(hotel);
 
-            nuevohotel.marca = hotel.marca;
-            nuevohotel.sucursal = hotel.sucursal;
-            nuevohotel.estrellas = hotel.estrellas;
-            nuevohotel.bloqueado = hotel.bloqueado;
-            nuevohotel.idDireccion = hotel.idDireccion;
+            if (respuesta.Code.Equals("BAD_REQUEST"))
+            {
+                return BadRequest(respuesta);
+            }
 
-            _commandservice.createHotel(nuevohotel);
-
-            return CreatedAtAction("PostHotel", new {id = nuevohotel.id, marca = nuevohotel.marca, sucursal = hotel.sucursal });
+            return Ok(respuesta);
         }
-
-        //[HttpGet]
-        //public IEnumerable<Hotel> Get()
-        //{
-        //return _queryservice.getHoteles();
-        //}
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Hotel>>> GetHoteles()
-        {
-            var listado = _queryservice.getHoteles();
-
-            if (listado.Count() == 0)
-                return NotFound();
-
-            return listado.ToList();
-        }
-
-        //[HttpGet("{id}")]
-        //public Hotel GetId(int id)
-        //{
-        //return _queryservice.getHotelId(id);
-        //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Hotel>> GetHotel(int id)
+        public async Task<ActionResult> GetHotel(int id)
         {
-            var hotel = _queryservice.getHotelId(id);
+            object respuesta = _hotelservice.GetHotelId(id);
 
-            if (hotel == null)
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            return hotel;
+            return Ok(respuesta);
         }
 
-        //[HttpDelete("{id}")]
-        //public void DeleteId(int id)
-        //{
-        //_commandservice.deleteHotelId(id);
-        //}
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Hotel>> DeleteHotel(int id)
+        [HttpGet]
+        public async Task<ActionResult> GetHoteles([FromQuery] string idDestino = "")
         {
-            var hotel = _queryservice.getHotelId(id);
-            if (hotel == null)
+            object respuesta = _hotelservice.GetHoteles(idDestino);
+
+            if (respuesta is Response)
             {
-                return NotFound();
+                if (((Response)respuesta).Code == "BAD_REQUEST")
+                {
+                    return BadRequest(respuesta);
+                }
+
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
             }
 
-            _commandservice.deleteHotelId(id);
-
-            return hotel;
+            return Ok(respuesta);
         }
 
 

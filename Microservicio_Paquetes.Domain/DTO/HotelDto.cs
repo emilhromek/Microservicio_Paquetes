@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class HotelDto
     {
-        public string marca { get; set; }
-        public string sucursal { get; set; }
-        public int estrellas { get; set; }
-        public bool bloqueado { get; set; }
-        public int idDireccion { get; set; }
+        public string Marca { get; set; }
+        public string Sucursal { get; set; }
+        public int Estrellas { get; set; }
+        public bool Bloqueado { get; set; }
+        public int DireccionId { get; set; }
+        public int DestinoId { get; set; }
     }
 }

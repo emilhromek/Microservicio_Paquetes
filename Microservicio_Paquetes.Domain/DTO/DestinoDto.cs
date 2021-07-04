@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class DestinoDto
     {
-        public string lugar { get; set; }
-        public string descripcion { get; set; }
-        public string atractivo { get; set; }
-        public string historia { get; set; }
+        public string Lugar { get; set; }
+        public string Descripcion { get; set; }
+        public string Atractivo { get; set; }
+        public string Historia { get; set; }
+        public string Imagen { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Microservicio_Paquete.Domain.Commands
+namespace Microservicio_Paquetes.Domain.Commands
 {
     public interface IRepositoryGeneric
     {

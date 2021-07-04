@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class ExcursionDto
     {
-        public string titulo { get; set; }
-        public string descripcion { get; set; }
-        public int precio { get; set; }
-        public bool bloqueada { get; set; }
-        //public List<int> listadedestinos { get; set; }
+        public string Titulo { get; set; }
+        public string Descripcion { get; set; }
+        public int Precio { get; set; }
+        public bool Bloqueada { get; set; }
+        public int DestinoId { get; set; }
     }
 }

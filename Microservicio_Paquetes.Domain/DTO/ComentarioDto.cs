@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Microservicio_Paquete.Domain.DTO
+namespace Microservicio_Paquetes.Domain.DTO
 {
     public class ComentarioDto
     {
-         public string fecha { get; set; }
-         public string mensaje { get; set; }
-         public int idDestino { get; set; }
-         public int idPasajero { get; set; }
+         public string Mensaje { get; set; }
+         public int DestinoId { get; set; }
+         public int PasajeroId { get; set; }
     }
 }

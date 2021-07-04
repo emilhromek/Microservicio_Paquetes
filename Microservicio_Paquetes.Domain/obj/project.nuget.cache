@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6a3de8QPNns7NsCrabnTxmTM+j5eG7avsZ7awqm3f+Yu32ANzC+vCHPQr7SEu9YCECpvY5hsblLng1eOOZYfcQ==",
+  "dgSpecHash": "aN62OIarevZbxsD3ZpZD0PmDXGuY7L8B1NDGniav+Ds4mmzho8S4IOf4R7rAtmIc3Zv/tMAh6bk2fJn0DAbfWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emil\\proyecto_software_unaj\\PaqueteMicroservicio2\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emil\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Emil\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
