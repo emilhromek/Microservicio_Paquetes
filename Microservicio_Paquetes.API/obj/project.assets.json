@@ -6052,19 +6052,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emil\\.nuget\\packages\\": {}
+    "C:\\Users\\sergi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
+      "projectUniqueName": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
       "projectName": "Microservicio_Paquetes.API",
-      "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
-      "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.API\\obj\\",
+      "projectPath": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.API\\Microservicio_Paquetes.API.csproj",
+      "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6078,14 +6078,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
-              "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj"
+            "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj": {
+              "projectPath": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.AccessData\\Microservicio_Paquetes.AccessData.csproj"
             },
-            "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
-              "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
+            "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj": {
+              "projectPath": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.Application\\Microservicio_Paquetes.Application.csproj"
             },
-            "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
-              "projectPath": "C:\\Users\\Emil\\source\\repos\\PaqueteMicroservicio\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
+            "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj": {
+              "projectPath": "C:\\Users\\sergi\\Documents\\INFORMATICA\\Proyecto\\Sprint3\\PaquetesTuristicos\\Microservicio_Paquetes\\Microservicio_Paquetes.Domain\\Microservicio_Paquetes.Domain.csproj"
             }
           }
         }
@@ -6143,7 +6143,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

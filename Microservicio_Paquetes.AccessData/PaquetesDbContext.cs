@@ -16,7 +16,7 @@ namespace Microservicio_Paquetes.AccessData
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost;Database=mspaquetes;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=mspaquetes;Trusted_Connection=True;");
         }
         public DbSet<Comentario> Comentario { get; set; }
         public DbSet<Destino> Destinos { get; set; }

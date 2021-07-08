@@ -38,7 +38,7 @@ namespace Microservicio_Paquetes.API
 
             services.AddControllers();
             //var connectionString = Configuration.GetSection(@"Server=localhost;Database=master;Trusted_Connection=True;").Value; //busca las configuraciones del sistema
-            services.AddDbContext<PaquetesDbContext>(options => options.UseSqlServer(@"Server=localhost;Database=mspaquetes;Trusted_Connection=True;"));
+            services.AddDbContext<PaquetesDbContext>(options => options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=mspaquetes;Trusted_Connection=True;"));
 
             services.AddTransient<ICommands, Commands>();
             services.AddTransient<IQueries, Queries>();
