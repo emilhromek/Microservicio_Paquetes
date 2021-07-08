@@ -13,6 +13,8 @@ namespace Microservicio_Paquetes.Application.Services
     {
         public Response PostPaquete(PaqueteDto paquete);
         public object GetPaqueteId(int id);
+
+        public object GetPaquetes();
     }
 
     public class PaqueteService: IPaqueteService
@@ -24,6 +26,29 @@ namespace Microservicio_Paquetes.Application.Services
         {
             _commands = commands;
             _queries = queries;
+        }
+
+        public object GetPaquetes()
+        {
+            var paquetes = _queries.Traer<Paquete>();
+
+            if (paquetes.Count == 0)
+            {
+                return new Response()
+                {
+                    Code = "NOT_FOUND",
+                    Message = "No hay paquetes."
+                };
+            }
+
+            var listaOutput = new List<PaqueteOutDto>();
+
+            foreach (Paquete x in paquetes)
+            {
+                listaOutput.Add((PaqueteOutDto)GetPaqueteId(x.Id));
+            }
+
+            return listaOutput;
         }
 
         public Response PostPaquete(PaqueteDto paquete)

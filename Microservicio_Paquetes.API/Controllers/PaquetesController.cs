@@ -52,5 +52,21 @@ namespace Microservicio_Paquetes.API.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpGet]
+        public async Task<ActionResult> GetPaquetes()
+        {
+            object respuesta = _paqueteservice.GetPaquetes();
+
+            if (respuesta is Response)
+            {
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
+            }
+
+            return Ok(respuesta);
+        }
     }
 }
