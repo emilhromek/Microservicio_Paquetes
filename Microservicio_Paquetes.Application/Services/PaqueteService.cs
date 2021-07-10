@@ -15,6 +15,8 @@ namespace Microservicio_Paquetes.Application.Services
         public object GetPaqueteId(int id);
 
         public object GetPaquetes();
+
+        public object GetPaquetes(string idDestino);
     }
 
     public class PaqueteService: IPaqueteService
@@ -28,6 +30,59 @@ namespace Microservicio_Paquetes.Application.Services
             _queries = queries;
         }
 
+        public object GetPaquetes(string idDestino)
+        {
+            var paqueteDestinos = _queries.Traer<PaqueteDestino>();
+
+            var paquetesARenderizar = new List<Paquete>();
+
+            var listaOutput = new List<object>();
+
+            // Primer filtrado, por destino
+
+            if (idDestino.Equals(""))
+            {
+                foreach (Paquete x in _queries.Traer<Paquete>())
+                {
+                    paquetesARenderizar.Add(x);
+                }
+            }
+
+            if (!idDestino.Equals(""))
+            {
+                foreach (PaqueteDestino x in paqueteDestinos)
+                {
+                    if (x.DestinoId == Int32.Parse(idDestino))
+                    {
+                        var paqueteAAgregar = _queries.EncontrarPor<Paquete>(x.PaqueteId);
+
+                        if (!paquetesARenderizar.Contains(paqueteAAgregar))
+                        {
+                            paquetesARenderizar.Add(paqueteAAgregar);
+                        }
+                    }
+                }
+            }
+
+
+
+            foreach (Paquete x in paquetesARenderizar)
+            {
+                listaOutput.Add(GetPaqueteId(x.Id));
+            }
+
+            if (listaOutput.Count == 0)
+            {
+                return new Response()
+                {
+                    Code = "NOT_FOUND",
+                    Message = "No hay paquetes."
+                };
+            }
+
+            return listaOutput;
+
+        }
         public object GetPaquetes()
         {
             var paquetes = _queries.Traer<Paquete>();

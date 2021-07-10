@@ -53,6 +53,23 @@ namespace Microservicio_Paquetes.API.Controllers
             return Ok(respuesta);
         }
 
+        [Route("porDestino")]
+        [HttpGet]
+        public async Task<ActionResult> GetPaquetes([FromQuery] string destinoId = "")
+        {
+            object respuesta = _paqueteservice.GetPaquetes(destinoId);
+
+            if (respuesta is Response)
+            {
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
+            }
+
+            return Ok(respuesta);
+        }
+
         [HttpGet]
         public async Task<ActionResult> GetPaquetes()
         {
