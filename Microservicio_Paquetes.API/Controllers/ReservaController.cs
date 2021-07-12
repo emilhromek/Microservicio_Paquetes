@@ -52,5 +52,31 @@ namespace Microservicio_Paquetes.API.Controllers
             return Ok(respuesta);
         }
 
+        [Route("{id}/registrarPago")]
+        [HttpPatch]
+        public async Task<IActionResult> PatchPago(int id)
+        {
+            object respuesta = _reservaservice.PatchPago(id);
+
+            return Ok(respuesta);
+        }
+
+        
+        [HttpGet]
+        public async Task<ActionResult> GetReservas([FromQuery] string idPaquete = "")
+        {
+            object respuesta = _reservaservice.GetReservas(idPaquete);
+
+            if (respuesta is Response)
+            {
+                if (((Response)respuesta).Code == "NOT_FOUND")
+                {
+                    return NotFound(respuesta);
+                }
+            }
+
+            return Ok(respuesta);
+        }
+
     }
 }

@@ -13,6 +13,11 @@ namespace Microservicio_Paquetes.Application.Services
     {
         public Response PostReserva(ReservaDto reserva);
         public object GetReservaId(int id);
+
+        public Response PatchPago(int id);
+
+        public object GetReservas(string idPaquete);
+
     }
 
     public class ReservaService : IReservaService
@@ -133,5 +138,74 @@ namespace Microservicio_Paquetes.Application.Services
 
             return output;
         }
+
+        public Response PatchPago(int id)
+        {
+            var reserva = _queries.EncontrarPor<Reserva>(id);
+            if(reserva == null)
+            {
+                return new Response
+                {
+                    Code = "NOT_FOUND",
+                    Message = $"La reserva id:{id} no se encontró"
+                };
+            }
+            reserva.Pagado = true;
+            
+            return new Response
+            {
+                Code = "Ok",
+                Message = $"Se registró el pago de la reserva id:{id}"
+            };
+        }
+
+        public object GetReservas(string idPaquete)
+        {
+            var paquetes = _queries.Traer<Paquete>();
+
+            var reservasARenderizar = new List<Reserva>();
+
+            var listaOutput = new List<object>();
+
+            if (idPaquete.Equals(""))
+            {
+                foreach (Reserva x in _queries.Traer<Reserva>())
+                {
+                    reservasARenderizar.Add(x);
+                }
+            }
+
+            if (!idPaquete.Equals(""))
+            {
+                foreach (Reserva x in _queries.Traer<Reserva>())
+                {
+                    if (x.IdPaquete == Int32.Parse(idPaquete))
+                    {
+                        if (!reservasARenderizar.Contains(x))
+                        {
+                            reservasARenderizar.Add(x);
+                        }
+                    }
+                }
+            }
+
+            foreach (Reserva x in reservasARenderizar)
+            {
+                listaOutput.Add(GetReservaId(x.Id));
+            }
+
+            if (listaOutput.Count == 0)
+            {
+                return new Response()
+                {
+                    Code = "NOT_FOUND",
+                    Message = "No hay reservas."
+                };
+            }
+
+            return listaOutput;
+
+        }
+
     }
 }

@@ -355,6 +355,7 @@ namespace Microservicio_Paquetes.Application.Services
                         Descripcion = getDestino.Descripcion,
                         Atractivo = getDestino.Atractivo,
                         Historia = getDestino.Historia,
+                        Imagen = getDestino.Imagen
                     };
 
                     var hotel = new HotelOutDto()
