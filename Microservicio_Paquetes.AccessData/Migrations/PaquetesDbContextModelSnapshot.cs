@@ -161,6 +161,11 @@ namespace Microservicio_Paquetes.AccessData.Migrations
                         {
                             Id = 6,
                             Descripcion = "Bitcoin"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descripcion = "Genérica"
                         });
                 });
 

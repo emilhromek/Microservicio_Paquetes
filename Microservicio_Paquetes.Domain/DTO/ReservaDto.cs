@@ -7,7 +7,7 @@ namespace Microservicio_Paquetes.Domain.DTO
     public class ReservaDto
     {
         public int Pasajeros { get; set; }
-        public bool Pagado { get; set; }
+        //public bool Pagado { get; set; }
         public int PasajeroId { get; set; }
         public int FormaPagoId { get; set; }
         public int PaqueteId { get; set; }

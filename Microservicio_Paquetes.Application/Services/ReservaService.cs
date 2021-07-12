@@ -60,7 +60,7 @@ namespace Microservicio_Paquetes.Application.Services
             Reserva nuevaReserva = new Reserva()
             {
                 Pasajeros = reserva.Pasajeros,
-                Pagado = reserva.Pagado,
+                Pagado = false,
                 PasajeroId = reserva.PasajeroId,
                 FormaPagoId = reserva.FormaPagoId,
                 IdPaquete = reserva.PaqueteId,
